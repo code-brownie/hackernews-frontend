@@ -1,7 +1,7 @@
 // src/services/api.ts
 import { AuthResponse, Comment, PaginatedComments, PaginatedLikes, PaginatedPosts, PaginatedUsers, Post, User } from "../types";
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const API_URL = import.meta.env.REACT_APP_API_URL || 'http://localhost:3000';
 
 // Helper function to handle API responses
 async function handleResponse<T>(response: Response): Promise<T> {
@@ -16,23 +16,22 @@ async function handleResponse<T>(response: Response): Promise<T> {
 export const authService = {
     signIn: async (name: string, email: string, password: string): Promise<AuthResponse> => {
         const response = await fetch(`${API_URL}/auth/sign-in`, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
             },
-            body: JSON.stringify({ name }),
+            body: JSON.stringify({ name, email, password }),
         });
         return handleResponse<AuthResponse>(response);
     },
 
     logIn: async (email: string, password: string): Promise<AuthResponse> => {
         const response = await fetch(`${API_URL}/auth/log-in`, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Basic ${btoa(`${email}:${password}`)}`,
             },
+            body: JSON.stringify({ email, password }),
         });
         return handleResponse<AuthResponse>(response);
     },
