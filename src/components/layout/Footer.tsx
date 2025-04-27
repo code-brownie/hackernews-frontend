@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                     <div className="text-center md:text-left">
                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                            © {new Date().getFullYear()} NewsHub. All rights reserved.
+                            © {new Date().getFullYear()} HackerNews. All rights reserved.
                         </p>
                     </div>
                     <div className="flex gap-4">

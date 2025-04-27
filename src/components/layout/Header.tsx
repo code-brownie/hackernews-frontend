@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
         <header className="sticky top-0 z-40 w-full bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
             <div className="container flex h-16 items-center justify-between px-4 md:px-6">
                 <Link to="/" className="flex items-center space-x-2">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-500 text-transparent bg-clip-text">NewsHub</div>
+                    <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-500 text-transparent bg-clip-text">HackerNews</div>
                 </Link>
                 <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
                     <Link to="/" className="text-sm font-medium transition-colors hover:text-blue-600">
