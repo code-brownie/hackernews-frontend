@@ -1,4 +1,3 @@
-// src/pages/ProfilePage.tsx
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { Layout } from "../components/layout/Layout";
@@ -95,7 +94,7 @@ export const ProfilePage: React.FC = () => {
                             </CardFooter>
                         </Card>
 
-                        <Card>
+                        {/* <Card>
                             <CardHeader className="pb-2">
                                 <CardTitle>Account Activity</CardTitle>
                             </CardHeader>
@@ -121,7 +120,7 @@ export const ProfilePage: React.FC = () => {
                                     </div>
                                 </div>
                             </CardContent>
-                        </Card>
+                        </Card> */}
                     </div>
                 </div>
             </div>
