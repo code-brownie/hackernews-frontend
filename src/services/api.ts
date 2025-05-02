@@ -1,7 +1,7 @@
 import { AuthResponse, Comment, PaginatedComments, PaginatedLikes, PaginatedPosts, PaginatedUsers, Post, User } from "../types";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
-console.log(API_URL);
+
 // Helper function to handle API responses
 async function handleResponse<T>(response: Response): Promise<T> {
     if (!response.ok) {

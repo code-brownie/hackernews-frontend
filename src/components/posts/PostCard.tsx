@@ -47,7 +47,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, onDelete, onLikeChange
             setIsLiked(!isLiked);
             if (onLikeChange) onLikeChange();
         } catch (error) {
-            console.error("Error toggling like:", error);
+            //
         }
     };
 
@@ -55,10 +55,9 @@ export const PostCard: React.FC<PostCardProps> = ({ post, onDelete, onLikeChange
         if (!token || !onDelete) return;
 
         try {
-            await likeService.unlikePost(token, post.id);
             onDelete(post.id);
-        } catch (error) {
-            console.error("Error deleting post:", error);
+        } 
+        catch (error) { //
         }
     };
 

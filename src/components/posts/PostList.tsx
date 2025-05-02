@@ -55,8 +55,16 @@ export const PostList: React.FC<PostListProps> = ({ userPosts = false }) => {
         }
     };
 
-    const handleDeletePost = (postId: string) => {
-        setPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
+    const handleDeletePost = async (postId: string) => {
+        if (!token) return;
+
+        try {
+            await postService.deletePost(token, postId);
+            setPosts(prevPosts => prevPosts.filter(post => post.id !== postId));
+        } catch (err) {
+            
+            setError("Failed to delete post. Please try again.");
+        }
     };
 
     const handleRefresh = () => {

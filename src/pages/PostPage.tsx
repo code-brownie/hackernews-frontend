@@ -46,7 +46,6 @@ export const PostsPage: React.FC = () => {
             try {
                 const response = await postService.getPosts(token, currentPage, 10);
                 setPosts(response.data);
-                console.log("The posts", response.data);
                 setTotalPages(response.meta.totalPages);
             } catch (err) {
                 console.error("Error fetching posts:", err);
@@ -85,7 +84,6 @@ export const PostsPage: React.FC = () => {
             await postService.deletePost(token, postId);
             setPosts(prevPosts => prevPosts.filter(post => post.id !== postId));
         } catch (err) {
-            console.error("Error deleting post:", err);
             setError("Failed to delete post. Please try again.");
         }
     };
