@@ -3,7 +3,6 @@ import { useAuth } from "../context/AuthContext";
 import { Layout } from "../components/layout/Layout";
 import { PostList } from "../components/posts/PostList";
 import { Button } from "@/components/ui/button";
-import { PlusIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const HomePage: React.FC = () => {
