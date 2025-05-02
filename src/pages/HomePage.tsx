@@ -14,14 +14,6 @@ export const HomePage: React.FC = () => {
             <div className="max-w-3xl mx-auto">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-3xl font-bold">News Feed</h1>
-                    {isAuthenticated && (
-                        <Button asChild className="bg-blue-600 hover:bg-blue-700">
-                            <Link to="/create-post">
-                                <PlusIcon className="mr-2 h-4 w-4" />
-                                Create Post
-                            </Link>
-                        </Button>
-                    )}
                 </div>
 
                 {isAuthenticated ? (
